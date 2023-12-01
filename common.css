@@ -1,0 +1,294 @@
+body {
+  caret-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.align-left {
+  float: left;
+}
+
+.header-content {
+  width: 100%;
+  display: flex;
+}
+
+.background-art {
+  background-image: url("/Images/background.jpg");
+  color: rgb(255, 255, 255);
+  font-family: Courier New, monospace;
+  margin-top: 0px;
+}
+
+.ennuisaur {
+  width: 45vw;
+  position: absolute;
+  left: 40vw;
+  z-index: 1;
+}
+
+.ennuisaur-logo {
+  width: 35vw;
+}
+
+.light-switch {
+  width: 5vw;
+}
+
+.light-switch:hover,
+.light-switch:focus {
+  filter: brightness(0) saturate(100%) invert(93%) sepia(19%) saturate(981%) hue-rotate(346deg) brightness(107%) contrast(92%);
+  cursor: pointer;
+}
+
+.snozz-head-wrapper {
+  left: 100%;
+  width: 4.5vw;
+  top: -2vw;
+  height: 15vw;
+  position: relative;
+}
+
+.snozz-head-div {
+  cursor: pointer;
+  position: relative;
+}
+
+.snozz-head-sibling {
+  width: 3.5vw;
+  height: 8vw;
+  top: 6vw;
+  z-index: 5;
+  position: relative;
+  cursor: pointer;
+}
+
+.snozz-head {
+  z-index: 2 !important;
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* position: absolute; */
+  /* top: 3.5vw; */
+  /* right: 11.5vw; */
+  width: 4.5vw;
+  cursor: pointer !important;
+
+  transition: all 1s;
+}
+
+.snozz-head-sibling:hover,
+.snozz-head-sibling:focus {
+  height: 14vw;
+  /* width: 6vw; */
+}
+
+.snozz-head-sibling:hover + .snozz-head,
+.snozz-head-sibling:focus + .snozz-head {
+  filter: drop-shadow( 0 0 5px rgb(255, 242, 128)) drop-shadow( 0 0 10px rgb(255, 242, 128)) drop-shadow( 0 0 15px rgb(255, 242, 128));
+  cursor: pointer;
+  transform: translateY(5vw);
+}
+
+.leaves-div {
+  float: right;
+}
+
+.leaves-background {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 35vw;
+}
+
+.leaves-foreground {
+  z-index: 3;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 35vw;
+}
+
+.question-mark {
+  position: absolute;
+  top: 15vw;
+  right: 5vw;
+  z-index: 10;
+  animation: fade-in-out-alternating 1s ease-in-out infinite alternate;
+  font-size: 2vw;
+}
+
+.question-mark-hidden {
+  visibility: hidden;
+}
+
+@keyframes fade-in-out-alternating {
+  from {
+    opacity: 0;
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  to {
+    opacity: 0;
+    filter: blur(0);
+  }
+} 
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.actual-body {
+  border: 2px solid rgb(54, 2, 22);
+  position: absolute;
+  top: 0; 
+  left: 0;
+}
+
+
+/* BREAK */
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+/* * * * */
+
+/* TEST */
+.neocities-logo {
+  width: 20vw;
+}
+
+/* RESPONSIVE FOR SMALL SCREENS */
+@media (max-width: 1000px) {
+  .ennuisaur {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 25vw;
+  }
+
+  .leaves-foreground {
+    width: 70%;
+  }
+
+  .leaves-background {
+    width: 70%;
+  }
+
+  .ennuisaur-logo {
+    position: absolute;
+    width: 45vw;
+    z-index: 15;
+  }
+
+  .svg-glow {
+    z-index: 15;
+  }
+
+  .snozz-head-sibling {
+    width: 10vw;
+    height: 15vw;
+    top: 35vw;
+  }
+
+  .snozz-head-wrapper {
+    left: 70%;
+    width: 25vw;
+    top: -20vw;
+    /* height: 1vw; */
+    position: absolute;
+  }
+
+  .snozz-head {
+    width: 15vw;
+  }
+
+  .snozz-head-sibling:hover,
+  .snozz-head-sibling:focus {
+    height: 30vw;
+    /* width: 6vw; */
+  }
+
+  .snozz-head-sibling:hover + .snozz-head,
+  .snozz-head-sibling:focus + .snozz-head {
+    transform: translateY(15vw);
+  }
+
+  .question-mark {
+    position: absolute;
+    top: 35vw;
+    right: 0vw;
+    z-index: 10;
+    animation: fade-in-out-alternating 1s ease-in-out infinite alternate;
+    font-size: 5vw;
+  }
+
+  .light-switch {
+    position: absolute; 
+    top: 10vw;
+    right: 0;
+    width: 10vw;
+    z-index: 2;
+  }
+
+}
+
+/* FONT STUFF */ 
+
+@font-face {
+  font-family: "VT323";
+  src: url("/Fonts/VT323-Regular.ttf") format("truetype");
+}
+
+.header-div {
+  float: left;
+  width: 40%;
+  height: 15vw;
+  /* border: 2px solid blue; */
+}
+
+.header-font {
+  font-family: "VT323";
+  font-size: 10vw;
+  text-align: right;
+  margin: 0 !important;
+  /* border: 2px solid rgb(231, 253, 149); */
+  top: 15%;
+  position: relative;
+}
+
+.svg-glow {
+  animation: svg-shadow 5s ease-in-out infinite alternate;
+}
+
+@keyframes svg-shadow {
+  from {
+    filter: drop-shadow( 0 0 5px rgb(255, 242, 128)) drop-shadow( 0 0 10px rgb(255, 242, 128)) drop-shadow( 0 0 15px rgb(255, 242, 128));
+  }
+
+  to {
+    filter: drop-shadow( 0 0 20px rgba(255, 242, 128, 0)) drop-shadow( 0 0 25px rgba(255, 242, 128, 0)) drop-shadow( 0 0 40px rgba(255, 242, 128, 0));
+  }
+}
