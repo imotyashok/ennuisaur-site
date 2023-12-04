@@ -3,18 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The web site of ennuisaur</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-    <link href="/common.css" rel="stylesheet" type="text/css" media="all">
+    <title>Ennuisaur</title>
+    <link href="/CSS/common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="/CSS/main-page.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body class="background-art">
 
     <div class="row align-left">
       <img class="light-switch" id="lightswitch" src="/Images/lightswitch.svg">
       <div>
-        <img class="ennuisaur-logo svg-glow" id="ennuisaur-logo" src="/Images/ennuisaur-logo-white.svg">
+        <img class="ennuisaur-logo repeating-glow" id="ennuisaur-logo" src="/Images/ennuisaur-logo-white.svg">
       </div>
       <img class="ennuisaur" src="/Images/ennuisaur.png" >
       <div class="leaves-div">
@@ -30,14 +28,38 @@
       </div>
     </div>
 
-    <div class="break"></div>
+    <div class="row main-page-body" >
 
-    <div style="width: 100%; visibility: hidden;">
-      <span>Placeholder</span>
-      <img src="neocities.png" style="width: 2vw;">
+      <div class="art-button-div">
+        <img class="art-button" id="art-button" src="/Images/button.png">
+        <span class="art-label main-section-label" data-btnType="art-button">Art</span>
+      </div>
+
+      <div class="reptiles-button-div">
+        <img class="reptiles-button" id="reptiles-button" src="/Images/button.png">
+        <span class="reptiles-label main-section-label" data-btnType="reptiles-button">Reptiles</span>
+      </div>
+
+      <div class="edits-button-div">
+        <img class="edits-button" src="/Images/button.png" id="edits-button">
+        <span class="edits-label main-section-label" data-btnType="edits-button">Edits</span>
+      </div>
+    </div>
+
+    <div class="row main-page-body poetry-art-generator-row">
+      <div class="art-generator-div">
+        <img class="art-generator-placeholder" src="/Images/art-generator-placeholder.png">
+      </div>
+
+      <div class="poetry-button-div">
+        <img class="poetry-button" id="poetry-button" src="/Images/button.png">
+        <span class="poetry-label main-section-label" data-btnType="poetry-button">Poetry</span>
+      </div>
     </div>
 
     <!-- SCRIPT -->
+    
+    <script src="https://unpkg.com/meanderer@0.0.1/dist/meanderer.js"></script>
     <script src="/Scripts/main-page.js"></script>
 
   </body>

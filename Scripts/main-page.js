@@ -12,7 +12,7 @@ function getRandomNumber(minSize, maxSize) {
 
 function isSmallScreen() {
     var media_value = window.matchMedia("(max-width: 1000px)")
-    if (media_value.matches) { // If media query matches
+    if (media_value.matches) {
       return true;
     } else {
       return false;
@@ -44,11 +44,11 @@ async function toggleQuestionMarks(is_hide){
             if (isSmallScreen()) {
                 dX = getRandomNumber(-35, 20)
                 dY = getRandomNumber(35, 65)
-                fontSize = getRandomNumber(1.00, 10.00)
+                fontSize = getRandomNumber(1.0, 10.0)
             } else {
                 dX = getRandomNumber(-10, 10)
                 dY = getRandomNumber(10, 20)
-                fontSize = getRandomNumber(1.00, 5.00)
+                fontSize = getRandomNumber(1.0, 5.0)
             }
             newQuestionMark.style.left = dX + "vw";
             newQuestionMark.style.top = dY + "vw";
@@ -73,11 +73,39 @@ async function cleanupQuestionMarks(questionMarkList) {
 
 function toggleLightSwitch(){
     var ennuisaurLogo = document.getElementById("ennuisaur-logo"); 
-    if (ennuisaurLogo.classList.contains("svg-glow")){
-        ennuisaurLogo.classList.remove("svg-glow");
+    if (ennuisaurLogo.classList.contains("repeating-glow")){
+        ennuisaurLogo.classList.remove("repeating-glow");
     } else {
-        ennuisaurLogo.classList.add("svg-glow");
+        ennuisaurLogo.classList.add("repeating-glow");
     }
+}
+
+function toggleMainButtonsAnimationOn(label){
+    // if (label.classList.contains('highlight-glow')){
+    //     label.classList.remove('highlight-glow');
+    // } else {
+    //     label.classList.add('highlight-glow');
+    // }
+
+    // var buttonId = label.getAttribute('data-btnType');
+    // var mainButton = document.getElementById(buttonId);
+    // if (mainButton.classList.contains('pink-glitchy-glow')){
+    //     mainButton.classList.remove('pink-glitchy-glow');
+    // } else {
+    //     mainButton.classList.add('pink-glitchy-glow');
+    // }
+
+    label.classList.add('highlight-glow');
+    var buttonId = label.getAttribute('data-btnType');
+    var mainButton = document.getElementById(buttonId);
+    mainButton.classList.add('pink-glitchy-glow');
+}
+
+function toggleMainButtonsAnimationOff(label){
+    label.classList.remove('highlight-glow');
+    var buttonId = label.getAttribute('data-btnType');
+    var mainButton = document.getElementById(buttonId);
+    mainButton.classList.remove('pink-glitchy-glow');
 }
 
 /********** LISTENERS ************/ 
@@ -88,6 +116,10 @@ snozzButton.addEventListener('mouseout', (e) => toggleQuestionMarks(true));
 let lightSwitch = document.getElementById('lightswitch');
 lightSwitch.addEventListener('click', toggleLightSwitch);
 
-
-
-
+let mainSectionLabels = document.getElementsByClassName('main-section-label');
+console.log(mainSectionLabels);
+for (var i=0; i <mainSectionLabels.length; i++){
+    var label = mainSectionLabels[i];
+    label.addEventListener('mouseover', (e) => toggleMainButtonsAnimationOn(e.target)); 
+    label.addEventListener('mouseout', (e) => toggleMainButtonsAnimationOff(e.target)); 
+}
