@@ -9,57 +9,68 @@
   </head>
   <body class="background-art">
 
-    <div class="row align-left">
-      <img class="light-switch" id="lightswitch" src="/Images/lightswitch.svg">
-      <div>
-        <img class="ennuisaur-logo repeating-glow" id="ennuisaur-logo" src="/Images/ennuisaur-logo-white.svg">
-      </div>
-      <img class="ennuisaur" src="/Images/ennuisaur.png" >
-      <div class="leaves-div">
-        <img class="leaves-background" src="/Images/leaves-background.png">
-        <img class="leaves-foreground" src="/Images/leaves-foreground.svg">
-      </div>
-      <div class="snozz-head-wrapper" >
-        <div class="snozz-head-div">
-          <div class="snozz-head-sibling" id="snozz"></div>
-          <img class="snozz-head" src="/Images/snozz.svg">
+    <div>
+      <img class="leaves-banner" src="/Images/leafs.png" >
+    </div>
+
+    <div class="header-div">
+      <div class="row align-left">
+        <img class="light-switch" id="lightswitch" src="/Images/lightswitch.svg">
+        <div>
+          <img class="ennuisaur-logo repeating-glow" id="ennuisaur-logo" src="/Images/ennuisaur-logo-white.svg">
         </div>
-        <div id="question-mark-list"></div>
+        <img class="ennuisaur" src="/Images/ennuisaur.png" >
+        <div class="leaves-div">
+          <img class="leaves-background" src="/Images/leaves-background.png">
+          <img class="leaves-foreground" src="/Images/leaves-foreground.svg">
+        </div>
+        <div class="snozz-head-wrapper" >
+          <div class="snozz-head-div">
+            <div class="snozz-head-sibling" id="snozz"></div>
+            <img class="snozz-head" src="/Images/snozz.svg">
+          </div>
+          <div id="question-mark-list"></div>
+        </div>
       </div>
     </div>
 
-    <div class="row main-page-body" >
-
-      <div class="art-button-div">
-        <img class="art-button" id="art-button" src="/Images/button.png">
-        <span class="art-label main-section-label" data-btnType="art-button">Art</span>
-      </div>
-
-      <div class="reptiles-button-div">
-        <img class="reptiles-button" id="reptiles-button" src="/Images/button.png">
-        <span class="reptiles-label main-section-label" data-btnType="reptiles-button">Reptiles</span>
-      </div>
-
-      <div class="edits-button-div">
-        <img class="edits-button" src="/Images/button.png" id="edits-button">
-        <span class="edits-label main-section-label" data-btnType="edits-button">Edits</span>
-      </div>
+    <div class="about-container highlight-glow-small" id="about-container">
+      <div id="about-line"></div>
+      <img class="about-container-background" src="/Images/about-background.png">
+      <img class="about-background-gears" src="/Images/gears.png">
     </div>
 
-    <div class="row main-page-body poetry-art-generator-row">
-      <div class="art-generator-div">
-        <img class="art-generator-placeholder" src="/Images/art-generator-placeholder.png">
+    <div class="buttons-container">
+      <div class="row main-page-body" >
+        <div class="art-button-div">
+          <img class="art-button" id="art-button" src="/Images/button.png">
+          <span class="art-label main-section-label" data-btnType="art-button">Art</span>
+        </div>
+
+        <div class="reptiles-button-div">
+          <img class="reptiles-button" id="reptiles-button" src="/Images/button.png">
+          <span class="reptiles-label main-section-label" data-btnType="reptiles-button">Reptiles</span>
+        </div>
+
+        <div class="edits-button-div">
+          <img class="edits-button" src="/Images/button.png" id="edits-button">
+          <span class="edits-label main-section-label" data-btnType="edits-button">Edits</span>
+        </div>
       </div>
 
-      <div class="poetry-button-div">
-        <img class="poetry-button" id="poetry-button" src="/Images/button.png">
-        <span class="poetry-label main-section-label" data-btnType="poetry-button">Poetry</span>
+      <div class="row main-page-body poetry-art-generator-row">
+        <div class="art-generator-div">
+          <img class="art-generator-placeholder" src="/Images/art-generator-placeholder.png">
+        </div>
+
+        <div class="poetry-button-div">
+          <img class="poetry-button" id="poetry-button" src="/Images/button.png">
+          <span class="poetry-label main-section-label" data-btnType="poetry-button">Poetry</span>
+        </div>
       </div>
     </div>
 
     <!-- SCRIPT -->
-    
-    <script src="https://unpkg.com/meanderer@0.0.1/dist/meanderer.js"></script>
     <script src="/Scripts/main-page.js"></script>
 
   </body>

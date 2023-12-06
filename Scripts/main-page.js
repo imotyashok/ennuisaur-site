@@ -24,13 +24,9 @@ async function toggleQuestionMarks(is_hide){
 
     if (is_hide) {
         createQuestionMarks = false
-        console.log("Cleaning up question marks..")
-        console.log(questionMarkList)
-        console.log(questionMarkList.length)
         await cleanupQuestionMarks(questionMarkList)
     } else {
         createQuestionMarks = true
-        console.log("Generating question marks...");
         for(let i = 0; i < 30 && createQuestionMarks; i ++) {
             const newQuestionMark = document.createElement('h1')
             newQuestionMark.className = "question-mark"
@@ -73,28 +69,17 @@ async function cleanupQuestionMarks(questionMarkList) {
 
 function toggleLightSwitch(){
     var ennuisaurLogo = document.getElementById("ennuisaur-logo"); 
+    var aboutPageGlow = document.getElementById("about-container"); 
     if (ennuisaurLogo.classList.contains("repeating-glow")){
         ennuisaurLogo.classList.remove("repeating-glow");
+        aboutPageGlow.classList.remove("highlight-glow-small");
     } else {
         ennuisaurLogo.classList.add("repeating-glow");
+        aboutPageGlow.classList.add("highlight-glow-small");
     }
 }
 
 function toggleMainButtonsAnimationOn(label){
-    // if (label.classList.contains('highlight-glow')){
-    //     label.classList.remove('highlight-glow');
-    // } else {
-    //     label.classList.add('highlight-glow');
-    // }
-
-    // var buttonId = label.getAttribute('data-btnType');
-    // var mainButton = document.getElementById(buttonId);
-    // if (mainButton.classList.contains('pink-glitchy-glow')){
-    //     mainButton.classList.remove('pink-glitchy-glow');
-    // } else {
-    //     mainButton.classList.add('pink-glitchy-glow');
-    // }
-
     label.classList.add('highlight-glow');
     var buttonId = label.getAttribute('data-btnType');
     var mainButton = document.getElementById(buttonId);
@@ -108,16 +93,40 @@ function toggleMainButtonsAnimationOff(label){
     mainButton.classList.remove('pink-glitchy-glow');
 }
 
+async function toggleAboutSection(){
+    var aboutContainer = document.querySelector(".about-container");
+    var aboutLine = document.getElementById("about-line")
+
+    if (aboutContainer.classList.contains("start")){
+        aboutContainer.classList.remove("start");
+        aboutLine.classList.remove("start"); 
+        var clientHeight = aboutContainer.clientHeight;
+        var maxHeight = window.innerWidth * 95 / 100
+
+        await new Promise(r => setTimeout(r, 2500 / ( maxHeight / clientHeight )));
+
+        aboutLine.classList.remove("about-container-line");
+        aboutLine.classList.add("about-container-line-reverse");
+    } else {
+        aboutLine.classList.add("about-container-line")
+        aboutLine.classList.remove("about-container-line-reverse")
+
+        await new Promise(r => setTimeout(r, 1100));
+        aboutLine.classList.add("start");
+        aboutContainer.classList.add("start");
+    }
+}
+
 /********** LISTENERS ************/ 
 let snozzButton = document.getElementById('snozz');
 snozzButton.addEventListener('mouseover', (e) => toggleQuestionMarks(false)); 
 snozzButton.addEventListener('mouseout', (e) => toggleQuestionMarks(true)); 
+snozzButton.addEventListener("click", toggleAboutSection); 
 
 let lightSwitch = document.getElementById('lightswitch');
 lightSwitch.addEventListener('click', toggleLightSwitch);
 
 let mainSectionLabels = document.getElementsByClassName('main-section-label');
-console.log(mainSectionLabels);
 for (var i=0; i <mainSectionLabels.length; i++){
     var label = mainSectionLabels[i];
     label.addEventListener('mouseover', (e) => toggleMainButtonsAnimationOn(e.target)); 

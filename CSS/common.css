@@ -42,9 +42,9 @@ body {
 }
 
 .header-div {
-  float: left;
-  width: 40%;
-  height: 15vw;
+  width: 75%; 
+  height: 28vw; 
+  margin: auto;
 }
 
 .header-font {
@@ -73,6 +73,10 @@ body {
 
 .highlight-glow {
   filter: drop-shadow( 0 0 10px rgb(255, 242, 128)) drop-shadow( 0 0 10px rgb(255, 242, 128)) drop-shadow( 0 0 15px rgb(255, 242, 128));
+}
+
+.highlight-glow-small {
+  filter: drop-shadow( 0 0 5px rgb(255, 242, 128)) drop-shadow( 0 0 5px rgba(255, 242, 128, 0.459)) drop-shadow( 0 0 5px rgba(255, 242, 128, 0.438));
 }
 
 .pink-glitchy-glow {

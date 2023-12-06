@@ -1,16 +1,21 @@
 .ennuisaur {
-    width: 40vw;
+    width: 35vw;
     position: absolute;
-    left: 40vw;
+    left: 45vw;
     z-index: 1;
 }
 
 .ennuisaur-logo {
-    width: 35vw;
+    width: 30vw;
+    position: relative;
+    display: inline-block;
+    left: 2.5vw;
 }
 
 .light-switch {
-    width: 5vw;
+    width: 3vw;
+    position: absolute;
+    top: 0vw;
 }
 
 .light-switch:hover,
@@ -20,7 +25,8 @@
 }
 
 .snozz-head-wrapper {
-    left: 100%;
+    /* left: 100%; */
+    left: 41vw;
     width: 4.5vw;
     top: -2vw;
     height: 15vw;
@@ -48,12 +54,8 @@
     right: 0;
     top: 0;
     bottom: 0;
-    /* position: absolute; */
-    /* top: 3.5vw; */
-    /* right: 11.5vw; */
     width: 4.5vw;
     cursor: pointer !important;
-
     transition: all 1s;
 }
 
@@ -126,6 +128,13 @@
     }
 } 
 
+.leaves-banner {
+    position: absolute;
+    width: 75%;
+    margin-left: 15vw;
+    top: 15vw;
+}
+
 .hidden {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -143,11 +152,18 @@
     /* display: flex; */
 }
 
+.buttons-container {
+    width: 75%; 
+    margin: auto;
+    /* box-shadow: 0px 0px 55px 0px rgb(216, 75, 245);
+    clip-path: inset(0px -25px 0px -25px); */
+}
+
 .art-button-div {
     position: relative;
     /* display: inline-block; */
     /* border: 1px solid peru; */
-    margin-left: 10vw;
+    /* margin-left: 10vw; */
 }
 
 .art-button {
@@ -168,7 +184,7 @@
     position: relative;
     /* display: inline-block; */
     /* border: 1px solid peru; */
-    margin-left: 6vw;
+    margin-left: 3vw;
     margin-top: 5vw;
 }
 
@@ -191,8 +207,9 @@
     position: relative;
     /* display: inline-block; */
     /* border: 1px solid peru; */
-    margin-left: 6vw;
+    /* margin-left: 6vw; */
     margin-top: 4vw;
+    margin-left: 5vw;
 }
 
 .edits-button {
@@ -214,7 +231,7 @@
     position: relative;
     /* display: inline-block; */
     /* border: 1px solid peru; */
-    margin-left: 25vw;
+    margin-left: 20vw;
     margin-top: 4vw;
 }
 
@@ -235,16 +252,103 @@
 
 .art-generator-placeholder {
     width: 20vw;
-    margin-left: 12vw; 
+    margin-left: 4vw; 
 }
 
-.top-margin-padding {
-    margin-top: 15vw; 
+.about-container {
+    width: 100%;
+    height: 2.5vw;
+    overflow: hidden;
+    transition: 3s height ease-in-out;
+    text-align: center;
+    position: relative;
 }
 
+#about-line {
+    width: 100%; 
+    margin: auto;
+    transition: 3s height ease-in-out;
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+    height: 2vw;
+    z-index: 9;
+} 
+
+#about-line.start {
+    height: 95vw;
+    filter: drop-shadow( 0 0 5px rgb(255, 242, 128)) drop-shadow( 0 0 5px rgba(255, 242, 128, 0.459)) drop-shadow( 0 0 5px rgba(255, 242, 128, 0.438));
+}
+
+.about-container-line {
+    border-bottom: 3px ridge yellow;
+    animation: line 1s linear forwards;
+    filter: drop-shadow( 0 0 2px rgb(255, 242, 128)) drop-shadow( 0 0 2px rgba(255, 242, 128, 0.459)) drop-shadow( 0 0 2px rgba(255, 242, 128, 0.438));
+}
+
+.about-container.start {
+    height: 95.5vw;
+}
+
+@keyframes line {
+    from {
+      left:50%;
+      width:0%;
+    }
+    to {
+      left:5%;
+      width:90%;
+    }
+}
+
+.about-container-line-reverse {
+    border-bottom: 3px ridge yellow;
+    animation: reverse-line 1s linear forwards;
+    filter: drop-shadow( 0 0 5px rgb(255, 242, 128)) drop-shadow( 0 0 5px rgba(255, 242, 128, 0.459)) drop-shadow( 0 0 5px rgba(255, 242, 128, 0.438));
+}
+
+@keyframes reverse-line {
+    from {
+      left:5%;
+      width:90%;
+    }
+    to {
+        left:50%;
+        width:0%;
+    }
+}
+
+.about-container-background {
+    height: 75vw;
+    margin-top: 10vw;
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-background-gears {
+    height: 92vw;
+    position: absolute;
+    top: 1vw;
+    left:0;
+    right:0;
+    bottom:0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -10;
+
+}
 
 /* RESPONSIVE FOR SMALL SCREENS */
 @media (max-width: 1000px) {
+    .header-div {
+        height: 95vw;
+    }
+
     .ennuisaur {
         width: 100%;
         position: absolute;
@@ -280,7 +384,6 @@
         left: 70%;
         width: 25vw;
         top: -20vw;
-        /* height: 1vw; */
         position: absolute;
     }
 
@@ -291,7 +394,6 @@
     .snozz-head-sibling:hover,
     .snozz-head-sibling:focus {
         height: 30vw;
-        /* width: 6vw; */
     }
 
     .snozz-head-sibling:hover + .snozz-head,
@@ -308,6 +410,24 @@
         font-size: 5vw;
     }
 
+    .about-container.start {
+        height: 130vw;
+    }
+
+    #about-line.start {
+        height: 129.5vw;
+    }
+
+    .about-container-background {
+        width: 75%; 
+        height: auto;
+    }
+
+    .about-background-gears {
+        width: 100%;
+        height: auto;
+    }
+
     .light-switch {
         position: absolute; 
         top: 10vw;
@@ -316,9 +436,12 @@
         z-index: 2;
     }
 
+    .buttons-container {
+        width: 100%;
+    }
+
     .art-button-div{
         display: inline;
-        margin-top: 95vw;   
         width: 70%;
         margin-left: auto;
         margin-right: auto;
