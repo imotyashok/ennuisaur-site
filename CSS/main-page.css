@@ -411,11 +411,11 @@
     }
 
     .about-container.start {
-        height: 130vw;
+        height: 135vw;
     }
 
     #about-line.start {
-        height: 129.5vw;
+        height: 134.5vw;
     }
 
     .about-container-background {
@@ -445,6 +445,7 @@
         width: 70%;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 5vw;
 
     }
 
