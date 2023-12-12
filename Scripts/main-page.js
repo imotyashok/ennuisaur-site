@@ -123,13 +123,16 @@ async function toggleAboutSection(){
     }
 }
 
-function updateGearImageOnSmallScreen(e){
+function updateAboutPageImagesOnSmallScreen(){
     var gearsImage = document.getElementById("about-background-gears");
+    var aboutBackground = document.getElementById("about-container-background");
     var smallWindow = window.matchMedia("(max-width: 1050px)");
-    if (e.matches || smallWindow.matches) {
+    if (smallWindow.matches) {
         gearsImage.src = "/Images/gears-responsive.png";
+        aboutBackground.src = "/Images/about-background-responsive.png"
       } else {
         gearsImage.src = "/Images/gears.png";
+        aboutBackground.src = "/Images/about-background.png"
       }
     
 }
@@ -157,5 +160,5 @@ let closeAboutPageUpArrow = document.getElementById("close-about-button-up-arrow
 closeAboutPageUpArrow .addEventListener("click", toggleAboutSection); 
 
 const resizeListener = window.matchMedia("(max-width: 1050px)");
-window.addEventListener("load", updateGearImageOnSmallScreen);
-resizeListener.addEventListener("change", updateGearImageOnSmallScreen);
+window.addEventListener("load", updateAboutPageImagesOnSmallScreen);
+resizeListener.addEventListener("change", updateAboutPageImagesOnSmallScreen);

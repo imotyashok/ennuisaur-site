@@ -260,11 +260,12 @@
     width: 100%;
     height: 2.5vw;
     /* height: 95vw; */
-    /* height: 185vw; */
+    /* height: 235vw; */
     overflow: hidden;
     transition: 3s height ease-in-out;
     text-align: center;
     position: relative;
+    /* border: 1px solid green; */
 }
 
 #about-line {
@@ -415,6 +416,7 @@
     text-align: center;
     animation: bounce 3s ease-in-out infinite;
     z-index: 13;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .close-about-button-up-arrow:hover {
@@ -503,17 +505,17 @@
     }
 
     .about-container.start {
-        height: 190vw;
+        height: 235vw;
     }
 
     #about-line.start {
-        height: 188vw;
+        height: 232vw;
     }
 
     .about-container-background {
         width: 95%; 
         height: auto;
-        margin-top: 19vw;
+        margin-top: 0;
     }
 
     .about-background-gears {
@@ -523,14 +525,15 @@
 
     .about-container-textbox-div {
         width: 75%;
-        height: 115vw;
-        top: 30vw;
-        left: 12vw;
-        line-height: 2.1vw;
+        height: 169vw;
+        top: 29.5vw;
+        left: 10vw;
+        line-height: 2.8vw;
     }
 
     .about-container-textbox {
         height: fit-content;
+        padding: 1.5vw;
     }
 
     .about-container-textbox > h1 {
@@ -549,7 +552,7 @@
     }
 
     .close-about-button-up-arrow {
-        top: 168vw;
+        top: 212vw;
         font-size: 15vw;
         animation: bounce-small 3s ease-in-out infinite;
     }
