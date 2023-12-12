@@ -155,6 +155,7 @@
 .buttons-container {
     width: 75%; 
     margin: auto;
+    margin-top: 3vw;
     /* box-shadow: 0px 0px 55px 0px rgb(216, 75, 245);
     clip-path: inset(0px -25px 0px -25px); */
 }
@@ -258,6 +259,8 @@
 .about-container {
     width: 100%;
     height: 2.5vw;
+    /* height: 95vw; */
+    /* height: 185vw; */
     overflow: hidden;
     transition: 3s height ease-in-out;
     text-align: center;
@@ -318,6 +321,11 @@
     }
 }
 
+#about-page-backgrounds {
+    height: fit-content;
+    margin-top: 2vw;
+}
+
 .about-container-background {
     height: 75vw;
     margin-top: 10vw;
@@ -334,17 +342,97 @@
     height: 92vw;
     position: absolute;
     top: 1vw;
-    left:0;
+    left: 2.5vw;
     right:0;
     bottom:0;
     margin-left: auto;
     margin-right: auto;
     z-index: -10;
+}
 
+.about-container-textbox-div {
+    width: 43%;
+    position: absolute;
+    height: 65vw;
+    top: 17vw;
+    left: 28vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 1.5vw;
+}
+
+.about-container-textbox {
+    width: 100%;
+    height: fit-content;
+    text-align: left;
+    padding: 0.5vw;
+    border: 2px outset white;
+    border-radius: 2vw;
+    background: rgba(255, 255, 255, 0.733);
+    margin-bottom: 0.5vw;
+    /* line-height: 1.5vw; */
+}
+
+.about-container-textbox > h1 {
+    color: black;
+    font-family: "VT323";
+    font-size: 2.6vw;
+    padding: 0;
+    margin: 0 0 1vw 0;
+}
+
+.about-container-textbox > span {
+    color: black;
+    font-family: "Ubuntu";
+    font-weight: 900;
+    font-size: 1vw;
+    margin: 0;
+    padding: 0;
+}
+
+.close-about-button-x {
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    font-size: 3.5vw;
+    position: absolute;
+    top: 10vw;
+    left: 75vw;
+    z-index: 12;
+}
+
+.close-about-button-x:hover {
+    cursor: pointer;
+    text-shadow: 1px 1px 15px rgb(255, 242, 128), 1px 1px 10px rgb(255, 242, 128);
+}
+
+.close-about-button-up-arrow {
+    color: rgb(255, 255, 255);
+    font-size: 2vw;
+    font-size: 7.5vw;
+    position: absolute;
+    top: 85vw;
+    text-align: center;
+    animation: bounce 3s ease-in-out infinite;
+    z-index: 13;
+}
+
+.close-about-button-up-arrow:hover {
+    cursor: pointer;
+    text-shadow:1px 1px 5px rgb(255, 242, 128), 1px 1px 5px rgb(255, 242, 128);
+} 
+
+@keyframes bounce {
+    0%, 5%, 95%, 100% {
+        transform: translateY(0);
+    }
+    45%, 55% {
+        transform: translateY(-1vw);
+    }
 }
 
 /* RESPONSIVE FOR SMALL SCREENS */
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
     .header-div {
         height: 95vw;
     }
@@ -410,22 +498,69 @@
         font-size: 5vw;
     }
 
+    .about-container {
+        margin-top: 15vw;
+    }
+
     .about-container.start {
-        height: 135vw;
+        height: 190vw;
     }
 
     #about-line.start {
-        height: 134.5vw;
+        height: 188vw;
     }
 
     .about-container-background {
-        width: 75%; 
+        width: 95%; 
         height: auto;
+        margin-top: 19vw;
     }
 
     .about-background-gears {
-        width: 100%;
+        width: 95%;
         height: auto;
+    }
+
+    .about-container-textbox-div {
+        width: 75%;
+        height: 115vw;
+        top: 30vw;
+        left: 12vw;
+        line-height: 2.1vw;
+    }
+
+    .about-container-textbox {
+        height: fit-content;
+    }
+
+    .about-container-textbox > h1 {
+        font-size: 4.2vw;
+    }
+    
+    .about-container-textbox > span {
+        /* font-size: 2.3vw; */
+        font-size: 2.5vw;
+    }
+
+    .close-about-button-x {
+        top: 11vw;
+        left: 83vw;
+        font-size: 8vw;
+    }
+
+    .close-about-button-up-arrow {
+        top: 168vw;
+        font-size: 15vw;
+        animation: bounce-small 3s ease-in-out infinite;
+    }
+
+    @keyframes bounce-small {
+        0%, 5%, 95%, 100% {
+            transform: translateY(0);
+        }
+        45%, 55% {
+            transform: translateY(-5vw);
+        }
     }
 
     .light-switch {
@@ -434,6 +569,13 @@
         right: 0;
         width: 10vw;
         z-index: 2;
+    }
+
+    .leaves-banner {
+        position: absolute;
+        width: 100%;
+        top: 90vw;
+        margin: auto;
     }
 
     .buttons-container {

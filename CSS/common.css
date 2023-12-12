@@ -21,12 +21,6 @@ body {
   margin-top: 0px;
 }
 
-.body-container {
-  width: 75%;
-  background-color: blueviolet;
-  border: 1px solid greenyellow;
-}
-
 /* BREAK */
 .break {
   flex-basis: 100%;
@@ -39,6 +33,11 @@ body {
 @font-face {
   font-family: "VT323";
   src: url("/Fonts/VT323-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url("/Fonts/Ubuntu-Regular.ttf") format("truetype");
 }
 
 .header-div {
@@ -77,6 +76,10 @@ body {
 
 .highlight-glow-small {
   filter: drop-shadow( 0 0 5px rgb(255, 242, 128)) drop-shadow( 0 0 5px rgba(255, 242, 128, 0.459)) drop-shadow( 0 0 5px rgba(255, 242, 128, 0.438));
+}
+
+.text-glow-small {
+  text-shadow:1px 1px 5px rgb(255, 242, 128), 1px 1px 5px rgb(255, 242, 128);
 }
 
 .pink-glitchy-glow {

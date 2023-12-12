@@ -69,7 +69,7 @@ async function cleanupQuestionMarks(questionMarkList) {
 
 function toggleLightSwitch(){
     var ennuisaurLogo = document.getElementById("ennuisaur-logo"); 
-    var aboutPageGlow = document.getElementById("about-container"); 
+    var aboutPageGlow = document.getElementById("about-page-backgrounds"); 
     if (ennuisaurLogo.classList.contains("repeating-glow")){
         ennuisaurLogo.classList.remove("repeating-glow");
         aboutPageGlow.classList.remove("highlight-glow-small");
@@ -101,7 +101,13 @@ async function toggleAboutSection(){
         aboutContainer.classList.remove("start");
         aboutLine.classList.remove("start"); 
         var clientHeight = aboutContainer.clientHeight;
-        var maxHeight = window.innerWidth * 95 / 100
+        var smallWindow = window.matchMedia("(max-width: 1050px)");
+        var maxHeight;
+        if (smallWindow.matches) {
+            maxHeight = window.innerWidth * 185 / 100;
+        } else {
+            maxHeight = window.innerWidth * 95 / 100;
+        }
 
         await new Promise(r => setTimeout(r, 2500 / ( maxHeight / clientHeight )));
 
@@ -116,6 +122,18 @@ async function toggleAboutSection(){
         aboutContainer.classList.add("start");
     }
 }
+
+function updateGearImageOnSmallScreen(e){
+    var gearsImage = document.getElementById("about-background-gears");
+    var smallWindow = window.matchMedia("(max-width: 1050px)");
+    if (e.matches || smallWindow.matches) {
+        gearsImage.src = "/Images/gears-responsive.png";
+      } else {
+        gearsImage.src = "/Images/gears.png";
+      }
+    
+}
+
 
 /********** LISTENERS ************/ 
 let snozzButton = document.getElementById('snozz');
@@ -132,3 +150,12 @@ for (var i=0; i <mainSectionLabels.length; i++){
     label.addEventListener('mouseover', (e) => toggleMainButtonsAnimationOn(e.target)); 
     label.addEventListener('mouseout', (e) => toggleMainButtonsAnimationOff(e.target)); 
 }
+
+let closeAboutPageX = document.getElementById("close-about-button-x");
+closeAboutPageX .addEventListener("click", toggleAboutSection); 
+let closeAboutPageUpArrow = document.getElementById("close-about-button-up-arrow");
+closeAboutPageUpArrow .addEventListener("click", toggleAboutSection); 
+
+const resizeListener = window.matchMedia("(max-width: 1050px)");
+window.addEventListener("load", updateGearImageOnSmallScreen);
+resizeListener.addEventListener("change", updateGearImageOnSmallScreen);
